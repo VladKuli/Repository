@@ -30,4 +30,5 @@ public class SpringWebConfiguration implements WebMvcConfigurer {
         resourceViewResolver.setCheckExistence(false);
         return resourceViewResolver;
     }
+
 }
