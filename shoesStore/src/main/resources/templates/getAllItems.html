@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Bank demo project">
+    <meta name="author" content="JavaGuru">
+    <title>Bank</title>
+</head>
+
+<body>
+
+<h3>Add User</h3>
+
+<table>
+    <tr>
+        <td>Name:</td>
+        <td>Model:</td>
+        <td>Brand:</td>
+        <td>Price:</td>
+    </tr>
+
+    <tr>
+        <td th:if="${bank_accounts != null}">
+    <tr th:each="bank_accounts : ${bank_accounts}">
+        <td th:text="${bank_accounts.name}" />
+        <td th:text="${bank_accounts.surname}" />
+        <td th:text="${bank_accounts.personalCode}" />
+        <td th:text="${bank_accounts.balance}" />
+        <td th:text="${bank_accounts.debt}" />
+    </tr>
+    </td>
+    </tr>
+</table>
+
+<form action="/adminMenu" method="get">
+    <input type="submit" value="Go to main page" name="Submit" />
+</form>
+
+<td th:if="${errors != null}">
+    <tr th:each="error : ${errors}">
+        <td th:text="${error.field}" />
+        <td th:text="${error.message}" />
+    </tr>
+</td>
+
+</body>
+
+</html>
