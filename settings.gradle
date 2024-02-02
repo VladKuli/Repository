@@ -1,3 +1,5 @@
 rootProject.name = 'Repository'
 include 'shoesStore'
+include 'autoDealer2'
+include 'untitled'
 
